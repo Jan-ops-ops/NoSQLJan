@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 import psutil
 from pymongo import MongoClient, ASCENDING
+#Plotter.py ist für den Graphen
 
 connection_string = os.environ.get("MONGODB_URI", "mongodb://localhost:27017/")
 client = MongoClient(connection_string)
