@@ -1,0 +1,10 @@
+Aufgabe 1.1
+
+Object Document Mapper
+Ein ODM ist ein Tool oder eine Bibliothek, die als Übersetzer zwischen einer objektorientierten Programmiersprache (Python, etc.) und einer dokumentenorientierten Datenbank (MongoDB) fungiert.
+
+Aufgabe 2.1
+
+python -m venv venv            
+PS C:\code\M165\NoSQL> venv\Scripts\activate
+(venv) PS C:\code\M165\NoSQL> pip install pymongo  
