@@ -1,0 +1,12 @@
+1. Wie werden die Dokumente miteinander verbunden?
+Wenn du eine Datei mit GridFS speicherst, legt MongoDB standardmässig zwei Collections an: fs.files und fs.chunks.
+
+fs.files: Enthält die Metadaten der Datei (Dateiname, Upload-Datum, Dateigröße, Content-Typ etc.). Jedes File-Dokument hat eine eindeutige ID unter dem Feld _id.
+
+fs.chunks: Hier werden die eigentlichen Rohdaten der Datei in kleinere Stücke (Chunks, standardmäßig 255 KB) aufgeteilt gespeichert.
+
+Die Verbindung: Jedes Dokument in der fs.chunks-Collection besitzt ein Feld namens files_id. Dieses Feld enthält als Fremdschlüssel exakt die _id des dazugehörigen Dokuments aus fs.files. Zudem sorgt das Feld n für die richtige Reihenfolge beim Zusammensetzen der Chunks.
+
+2. In welcher Codierung werden die Rohdaten gespeichert?
+BSON
+
